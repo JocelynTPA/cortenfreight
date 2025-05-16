@@ -168,3 +168,101 @@ section {
 }
 
 /* home bottom image with ports and shipping container section and styles ends here */
+
+/*  our services hero bg images and styles starts here */
+.hero-bg.our-services {
+  background-image: url('../images/our-services-main-hero-desktop-1440-up.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Remove background-attachment: fixed */
+  ;
+}
+
+@media (min-width: 768px) {
+  .hero-bg.our-services {
+    background-image: url('../images/our-services-main-hero-desktop-1440-up.jpg');
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-bg.our-services {
+    background-image: url('../images/our-services-main-hero-desktop-1440-up.jpg');
+  }
+}
+
+/* our services hero bg images and styles ends here */
+
+
+/* our services middle bg images with port and containers container section and styles starts here */
+.home-bottom-image-section {
+  background-image: url('../images/our-services-section-port-desktop-1440-up.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Remove background-attachment: fixed */
+  ;
+}
+
+@media (min-width: 768px) {
+  .home-midbottomdle-image-section {
+    background-image: url('/images/hour-services-section-port-desktop-1440-up.jpg');
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-bottom-image-section {
+    background-image: url('../images/our-services-section-port-desktop-1440-up.jpg');
+  }
+}
+
+/* our services middle bg images with port and containers container section and styles ends here */
+
+
+/*  who we are hero bg images and styles starts here */
+.hero-bg.who-we-are {
+  background-image: url('../images/who-we-are-main-hero-desktop-1440-up.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Remove background-attachment: fixed */
+  ;
+}
+
+@media (min-width: 768px) {
+  .hero-bg.who-we-are {
+    background-image: url('../images/who-we-are-main-hero-desktop-1440-up.jpg');
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-bg.who-we-are {
+    background-image: url('../images/who-we-are-main-hero-desktop-1440-up.jpg');
+  }
+}
+
+/*  who we are hero bg images and styles ends here */
+
+/* scroll to bottom button styles starts here */
+.scroll-button {
+  transform: translateX(-50%);
+  animation: pulse-smooth 2s infinite;
+  transition: ease-in-out 0.9s all;
+}
+
+.scroll-button:hover {
+  animation: none;
+  /* margin-bottom: -4px; */
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes pulse-smooth {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+    opacity: 0.7;
+  }
+}
+
+
+/* scroll to bottom button styles ends here */
