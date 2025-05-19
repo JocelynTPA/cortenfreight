@@ -33,99 +33,103 @@
         <!-- Top border bar, only visible from md and up -->
         <div class="hidden md:block absolute top-0 left-0 w-full h-2 bg-[var(--header-border-color)]"></div>
 
-        <div class="max-w-[1120px] w-full mx-auto flex items-center justify-between px-[var(--header-px)]  py-[var(--header-py)]">
-            
-                <a href="index.html" class="w-[var(--logo-w)]"><img src="images/corten-freight-logo.svg" alt="corten freight logo" /></a>
-            
+        <div
+            class="max-w-[1120px] w-full mx-auto flex items-center justify-between px-[var(--header-px)] py-[var(--header-py)]  md:py-[var(--header-md-py)]">
 
+            <a href="index.html" class="w-[var(--logo-w)]"><img src="images/corten-freight-logo.svg"
+                    alt="corten freight logo" /></a>
+
+
+            <div class="flex justify-end md:hidden absolute right-[92px]">
+                <button
+                    class="bg-orange-500 text-white text-sm px-3 py-2 rounded-[4px] text-xs font-medium leading-none whitespace-nowrap request-quote-btn">
+                    Request a Quote
+                </button>
+            </div>
             <div class="items-center justify-between flex w-full">
                 <!-- Desktop Nav -->
-                <nav id="mobile-menu" class="fixed md:relative top-0 left-0 w-full  bg-[var(--mobile--bg-color)] bg-opacity-95 z-40 overflow-hidden transition-all duration-300 
+                <nav id="mobile-menu" class="fixed md:relative top-0 left-0 w-full  md:py-0 bg-[var(--mobile--bg-color)] bg-opacity-95 
+                z--1 md:z-40 overflow-hidden transition-all duration-300 
         max-h-0 md:max-h-none opacity-0 md:opacity-100 md:flex  md:text-sm 
          md:font-medium md:bg-transparent">
                     <div
-                        class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 py-12 md:py-0 
-                        text-white text-lg font-medium md:gap-[var(--nav-gap)]  md:text-[var(--header-nav-color)] md:w-full md:ml-[-68px] md:h-[2.625rem]">
-                        <a href="our-services.html" class="hover:underline">Our Services</a>
-                        <a href="who-we-are.html" class="hover:underline">Who We Are</a>
-                        <a href="contact-us.html" class="hover:underline">Contact Us</a>
+                        class="flex flex-col md:flex-row items-center justify-center md:space-y-0 py-0 md:py-0 
+                        text-white text-lg font-medium gap-[var(--nav-gap-mobile)] md:gap-[var(--nav-gap)]  md:text-[var(--header-nav-color)] md:w-full md:ml-[-68px] md:h-[2.825rem] ">
+                        <a href="our-services.html" class="hover:underline text-2xl md:text-base m-[0]"> Our
+                            Services</a>
+                        <a href="who-we-are.html" class="hover:underline text-2xl md:text-base m-[0]">Who We Are</a>
+                        <a href="contact-us.html" class="hover:underline text-2xl md:text-base m-[0]">Contact Us</a>
                         <!-- CTA Button -->
                         <button
-                            class=" md:flex bg-orange-500 text-white text-sm px-4 py-2 rounded-lg request-quote-btn md:justify-end md:absolute md:right-0 md:top-0">
+                            class="md:flex md:bg-[var(--orange)] border md:border-none text-white text-2xl leading-none font-medium md:text-xl px-4 py-2 rounded-[6px] md:rounded-[4px] request-quote-btn md:absolute md:justify-end md:right-0 md:top-0">
                             Request a Quote
                         </button>
                     </div>
                 </nav>
+
             </div>
-            <button id="mobile-menu-toggle" class="mobile-menu-toggle md:hidden absolute focus:outline-none focus-visible:outline-none ml-4 z-50">
-              
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
+
+
+            <button id="mobile-menu-toggle"
+                class="mobile-menu-toggle md:hidden absolute outline-none focus-visible:outline-none z-50">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
 
             </button>
         </div>
     </header>
 
-    <!-- <nav id="mobile-menu" class="hidden md:flex md:gap-[var(--nav-gap)] text-sm text-[var(--header-nav-color)] font-medium">
-            <a href="our-services.html" class="hover:underline">Our Services</a>
-            <a href="who-we-are.html" class="hover:underline">Who We Are</a>
-            <a href="contact-us.html" class="hover:underline">Contact Us</a>
-        
-            <button class=" md:flex bg-orange-500 text-white text-sm px-4 py-2 rounded-lg request-quote-btn">
-                Request a Quote
-            </button>
-        </nav> -->
 
     <!-- Mobile Menu Button -->
     <!-- Header ends here -->
 
-    <!-- Mobile Nav -->
-    <div id="mobile-menu"
-        class="fixed top-0 left-0 w-full  bg-[var(--mobile--bg-color)] bg-opacity-95 z-40 overflow-hidden transition-all duration-300 max-h-0 opacity-0 ">
-        <div class="flex flex-col items-center justify-center space-y-6 py-12 text-white text-lg font-medium">
-            <button id="close-menu" class="absolute top-6 right-6">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <a href="our-services.html" class="hover:underline">Our Services</a>
-            <a href="who-we-are.html" class="hover:underline">Who We Are</a>
-            <a href="contact-us.html" class="hover:underline">Contact Us</a>
-            <a href="#quote"
-                class="bg-white text-blue-600 px-4 py-2 rounded border hover:bg-blue-600 hover:text-white transition request-quote-btn">Request
-                a Quote</a>
-        </div>
-    </div>
+
 
     <!-- --header-cta-bg-color -->
 
 
     <!-- Hero -->
     <section
-        class="hero-bg relative bg-cover bg-center bg-no-repeat bg-fixed text-center px-6 py-24 min-h-[480px] md:min-h-[640px] h-screen h-dvh">
-        <div class="max-w-md mx-auto  p-6 rounded  cta-header text-white">
-            <h2 class="text-xl font-normal mb-2 ">Call to Action</h2>
-            <p class="text-sm mb-4">
-                Our mission is to be the leading service provider in the transportation industry and
-                continue to build a company to be proud of.
-            </p>
-            <button class="bg-orange-500 text-white px-4 py-2 text-sm rounded request-quote-btn">Request a
-                Quote</button>
+        class="hero-bg relative bg-cover bg-center bg-no-repeat bg-fixed text-center px-6 py-24 min-h-[480px] md:min-h-[640px] h-screen h-dvh flex flex-col justify-end md:justify-center">
+
+        <div class="max-w-[1120px] w-full my-0 m-auto">
+            <div
+                class="max-w-md md:ml-0 mx-auto p-6 rounded-[4px] cta-header text-white text-center py-[40px] md:py-[75px] px-[36px] md:px[47px]">
+                <h2
+                    class=" font-normal mb-2 text-[1.75em] md:text-[2em] leading-[1rem] md:leading-[2.75rem] md:font-normal mb-[0.5rem] md:mb-[1.25rem]">
+                    Call to Action
+                </h2>
+                <p
+                    class="mb-4 text-[0.75rem] md:text-[1.25rem] leading-[1.25rem] md:leading-[1.5rem] mb-[1rem] md:mb-[1.25rem]">
+                    Our mission is to be the leading service provider in the transportation industry and
+                    continue to build a company to be proud of.
+                </p>
+                <button
+                    class="bg-orange-500 text-white px-10 py-2  rounded-[4px] request-quote-btn text-[1.25rem] leading-[2rem]">
+                    Request a Quote
+                </button>
+            </div>
         </div>
     </section>
 
 
+
     <!-- Trust Section -->
     <section class="py-16 px-6 text-center bg-[var(--section-top-bg-color)]">
-        <h2 class="text-xl font-normal mb-4 text-white">Your Trusted Freight Brokerage Partner</h2>
-        <p class="max-w-2xl mx-auto text-sm text-white">
-            Corten Freight is a leading freight brokerage firm, offering reliable, precise, and innovative logistics
-            solutions. By connecting shippers with a carefully selected network of trusted carriers, we ensure every
-            shipment is managed efficiently, transparently, and with the highest standards of service from start to
-            finish.
-        </p>
+        <div class="max-w-[640px] mx-auto  mb-[1.25rem]">
+            <h2
+                class="font-normal mb-4 text-white text-[1.75rem] md:text-[2rem] leading-[2.5rem] md:leading-[2.75rem] font-light">
+                Your Trusted Freight Brokerage Partner</h2>
+            <p class="max-w-2xl mx-auto text-white text-[1rem] leading-[1.625rem] md:leading-[1.75rem] font-light">
+                Corten Freight is a leading freight brokerage firm, offering reliable, precise, and innovative logistics
+                solutions. By connecting shippers with a carefully selected network of trusted carriers, we ensure every
+                shipment is managed efficiently, transparently, and with the highest standards of service from start to
+                finish.
+            </p>
+        </div>
     </section>
 
     <!-- Road image background section -->
@@ -138,41 +142,76 @@
     </section>
 
     <!-- 3 Principles -->
-    <section class="py-16 px-6 bg-[var(--section-middle-bg-color)]">
+    <section class="py-[2.5rem] md:py-[3.75rem] px-6 bg-[var(--section-middle-bg-color)]">
         <div class="max-w-[1120px] text-center mx-auto">
-            <h2 class="text-xl font-normal text-center mb-10 text-white">Our 3 Leading Principles</h2>
-            <div class="grid gap-6 md:grid-cols-3">
-                <div class="bg-white p-3 shadow text-center rounded-lg column-box text-[var(--main-blue-color)]">
-                    <div class="mb-4">
-                        <img src="images/principle_a.jpg"
-                            srcset="images/principle_a.jpg 1x, images/principle_a@2x.jpg 2x" class="w-full"
-                            alt="Principle A" width="auto" height="auto" loading="lazy" />
+            <h2
+                class="font-normal text-center mb-10 text-white text-[1.75rem] md:text-[2rem] leading-[2rem] mb-[2.5rem]">
+                Our 3 Leading Principles</h2>
+            <div class="grid gap-4 md:grid-cols-3">
+                <div
+                    class="bg-white p-3 shadow text-center rounded-[4px] column-box text-[var(--main-blue-color)] flex flex-col justify-between pb-[1.5rem] md:pb-[2rem]">
+                    <div class="h-full mb-[1rem] md:mb-[2.625rem]">
+                        <div class="mb-4">
+                            <img src="images/principle_a.jpg"
+                                srcset="images/principle_a.jpg 1x, images/principle_a@2x.jpg 2x" class="w-full"
+                                alt="Principle A" loading="lazy" />
+                        </div>
+                        <h3
+                            class="font-normal mb-[0.5rem] md:mb-[1rem] text-[1.5rem] md:text-[1.75rem] leading-[1.5rem] md:leading-[2rem] font-medium">
+                            Reliability & Precision
+                        </h3>
+                        <p class="text-[1rem] leading-[1.5rem] md:leading-[1.25rem] text-left">
+                            Enjoy timely deliveries with proactive communication and real-time tracking.
+                        </p>
                     </div>
-                    <h3 class="font-normal mb-2">Reliability & Precision</h3>
-                    <p class="text-sm mb-4">Enjoy timely deliveries with proactive communication and real-time tracking.
-                    </p>
-                    <button class="bg-orange-500 text-white px-4 py-2 text-sm rounded">What We Do</button>
+                    <div class="mt-auto flex m-auto">
+                        <a href="who-we-are.html"
+                            class="bg-orange-500 text-white px-10 py-[1rem] text-[1.25rem] leading-[1.25rem] rounded">What
+                            We Do</a>
+                    </div>
                 </div>
-                <div class="bg-white p-3 shadow text-center rounded-lg column-box text-[var(--main-blue-color)]">
-                    <div class="mb-4">
-                        <img src="images/principle_b.jpg"
-                            srcset="images/principle_c.jpg 1x, images/principle_b@2x.jpg 2x" class="w-full"
-                            alt="Principle B" width="auto" height="auto" loading="lazy" />
+                <div
+                    class="bg-white p-3 shadow text-center rounded-[4px] column-box text-[var(--main-blue-color)] flex flex-col justify-between pb-[1.5rem] md:pb-[2rem]">
+                    <div class="h-full mb-[1rem] md:mb-[2.625rem]">
+                        <div class="mb-4">
+                            <img src="images/principle_b.jpg"
+                                srcset="images/principle_c.jpg 1x, images/principle_b@2x.jpg 2x" class="w-full"
+                                alt="Principle B" width="auto" height="auto" loading="lazy" />
+                        </div>
+                        <h3
+                            class="font-normal mb-[0.5rem] md:mb-[1rem] text-[1.5rem] md:text-[1.75rem] leading-[1.5rem] md:leading-[2rem] font-medium">
+                            Cost-effective Solutions</h3>
+                        <p class="mb-[1rem] text-[1rem] leading-[1.5rem] md:leading-[1.25rem] text-left">Maximize
+                            efficiency and reduce costs through optimized routes and strategic
+                            logistics management.</p>
                     </div>
-                    <h3 class="font-normal mb-2">Cost-effective Solutions</h3>
-                    <p class="text-sm mb-4">Maximize efficiency and reduce costs through optimized routes and strategic
-                        logistics management.</p>
-                    <button class="bg-orange-500 text-white px-4 py-2 text-sm rounded">What We Do</button>
+                    <div class="mt-auto flex m-auto">
+                        <a href="who-we-are.html"
+                            class="bg-orange-500 text-white px-10 py-[1rem] text-[1.25rem] leading-[1.25rem] rounded">What
+                            We Do</a>
+                    </div>
+
                 </div>
-                <div class="bg-white p-3 shadow text-center rounded-lg column-box text-[var(--main-blue-color)]">
-                    <div class="mb-4"><img src="images/principle_c.jpg"
-                            srcset="images/principle_a.jpg 1x, images/principle_c@2x.jpg 2x" class="w-full"
-                            alt="Principle C" width="auto" height="auto" loading="lazy" />
+                <div
+                    class="bg-white p-3 shadow text-center rounded-[4px] column-box text-[var(--main-blue-color)] flex flex-col justify-between pb-[1.5rem] md:pb-[2rem]">
+                    <div class="h-full mb-[1rem] md:mb-[2.625rem]">
+                        <div class="mb-4"><img src="images/principle_c.jpg"
+                                srcset="images/principle_a.jpg 1x, images/principle_c@2x.jpg 2x" class="w-full"
+                                alt="Principle C" width="auto" height="auto" loading="lazy" />
+                        </div>
+                        <h3
+                            class="font-normal mb-[0.5rem] md:mb-[1rem] text-[1.5rem] md:text-[1.75rem] leading-[1.5rem] md:leading-[2rem] font-medium">
+                            Customized Logistics Solutions</h3>
+                        <p class="mb-[1rem] text-[1rem] leading-[1.5rem] md:leading-[1.25rem] text-left">Tailored
+                            brokerage services designed to meet your specific needs, including
+                            specialized cargo handling, drayage, and over-the-road trucking.</p>
                     </div>
-                    <h3 class="font-normal mb-2">Customized Logistics Solutions</h3>
-                    <p class="text-sm mb-4">Tailored brokerage services designed to meet your specific needs, including
-                        specialized cargo handling, drayage, and over-the-road trucking.</p>
-                    <button class="bg-orange-500 text-white px-4 py-2 text-sm rounded">What We Do</button>
+                    <div class="mt-auto flex m-auto">
+                        <a href="who-we-are.html"
+                            class="bg-orange-500 text-white px-10 py-[1rem] text-[1.25rem] leading-[1.25rem] rounded">What
+                            We Do</a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -189,13 +228,23 @@
     </section>
 
     <!-- Book Section -->
+
+
     <section class="py-16 px-6 text-center bg-[var(--section-bottom-bg-color)]">
-        <h2 class="text-xl font-normal mb-4 text-white">Book Your Next Shipment Now</h2>
-        <p class="text-sm max-w-xl mx-auto mb-6 text-white">
-            Our mission is to be the leading service provider in the transportation industry and continue to build a
-            company to be proud of.
-        </p>
-        <button class="bg-orange-500 text-white px-4 py-2 text-sm rounded-lg request-quote-btn">Request a Quote</button>
+        <div class="max-w-[640px] mx-auto  mb-[1.25rem]">
+            <h2
+                class="font-normal mb-4 text-white text-[1.75rem] md:text-[2rem] leading-[2.5rem] md:leading-[2.75rem] font-light">
+                Book Your Next Shipment Now</h2>
+            <p
+                class="max-w-2xl mx-auto text-white text-[1rem] leading-[1.625rem] md:leading-[1.75rem] font-light mb-[1.25rem]">
+                Our mission is to be the leading service provider in the transportation industry and continue to build a
+                company to be proud of.
+            </p>
+            <button
+                class="bg-orange-500 text-white px-10 py-2  rounded-[4px] request-quote-btn text-[1.25rem] leading-[2rem]">
+                Request a Quote
+            </button>
+
     </section>
 
     <!-- Footer -->
@@ -210,7 +259,7 @@
                 </a>
 
                 <button
-                    class="mt-4 bg-transparent border border-white px-4 py-2 text-sm rounded-lg mx-auto block request-quote-btn">
+                    class="mt-4 bg-transparent border border-white px-4 py-2  rounded-[4px]   mx-auto block request-quote-btn">
                     Request a Quote
                 </button>
             </div>
@@ -242,7 +291,7 @@
     <!-- Modal starts here -->
     <div id="quote-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-overlay">
         <div
-            class="bg-white rounded-lg shadow-lg p-8 w-full max-w-3xl mx-auto relative z-50 overflow-y-auto max-h-[90vh]">
+            class="bg-white rounded-[4px]   shadow-lg p-8 w-full max-w-3xl mx-auto relative z-50 overflow-y-auto max-h-[90vh]">
             <h2 class="text-center text-2xl font-semibold text-blue-700 mb-6">Shipment Quote</h2>
 
             <div id="thank-you-message" class="hidden text-center text-green-600 font-semibold text-lg py-8">
@@ -355,11 +404,6 @@
     <!-- Modal ends here -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/script.js"></script>
-
-
-
-
-
 </body>
 
 </html>
