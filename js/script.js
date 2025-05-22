@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const formData = new FormData(contactForm);
 
                 try {
-                    const res = await fetch('https://formsubmit.co/ajax/bandeanlori@gmail.com', {
+                    const res = await fetch('https://formsubmit.co/ajax/ian@cortenfreight.com', {
                         method: 'POST',
                         body: formData,
                         headers: {
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(contactForm);
 
             try {
-                const res = await fetch('https://formsubmit.co/ajax/bandeanlori@gmail.com', {
+                const res = await fetch('https://formsubmit.co/ajax/ian@cortenfreight.com', {
                     method: 'POST',
                     body: formData,
                     headers: {
