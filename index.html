@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CortenFreight</title>
     <style>
         body.loading {
             overflow: hidden;
@@ -32,10 +31,81 @@
     <title>Corten Freight - Home</title>
     <meta name="description"
         content="Corten Freight is a leading freight brokerage firm, offering reliable, precise, and innovative logistics solutions." />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Corten Freight",
+  "url": "https://www.cortenfreight.com/",
+  "logo": "https://www.cortenfreight.com/images/corten-freight-logo.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-1234",
+    "contactType": "Customer Service",
+    "areaServed": "US",
+    "availableLanguage": ["English"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/CortenFreight",
+    "https://www.linkedin.com/company/cortenfreight"
+  ]
+}
+</script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Corten Freight",
+  "url": "https://www.cortenfreight.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.cortenfreight.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cortenfreight.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Services",
+      "item": "https://www.cortenfreight.com/our-services.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Who We Are",
+      "item": "https://www.cortenfreight.com/who-we-are.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Contact Us",
+      "item": "https://www.cortenfreight.com/contact-us.html"
+    }
+  ]
+}
+</script>
     <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
     <script>
         window.addEventListener('load', () => {
             const loader = document.getElementById('page-loader');
@@ -47,6 +117,21 @@
             }, 600); // match with CSS transition
         });
     </script>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Corten Freight - Freight Brokerage Solutions">
+    <meta property="og:description"
+        content="Reliable, precise, and innovative freight brokerage tailored to your business.">
+    <meta property="og:image" content="https://www.cortenfreight.com/images/og-home.jpg">
+    <meta property="og:url" content="https://www.cortenfreight.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Corten Freight - Freight Brokerage Solutions">
+    <meta name="twitter:description"
+        content="Reliable, precise, and innovative freight brokerage tailored to your business.">
+    <meta name="twitter:image" content="https://www.cortenfreight.com/images/og-home.jpg">
+
 </head>
 
 <body class="text-slate-800 bg-white loading bg-[#05445E">
@@ -76,10 +161,10 @@
                 <nav id="mobile-menu" class="fixed md:relative top-0 left-0 w-full  md:py-0 bg-[var(--mobile--bg-color)] bg-opacity-95 
                 z--1 md:z-40 overflow-hidden transition-all duration-300 
         max-h-0 md:max-h-none opacity-0 md:opacity-100 md:flex  md:text-sm 
-         md:font-medium md:bg-transparent">
+         md:font-medium md:bg-transparent max-h-[100dvh] overflow-y-auto">
                     <div
                         class="flex flex-col md:flex-row items-center justify-center md:space-y-0 py-0 md:py-0 
-                        text-white text-lg font-medium gap-[var(--nav-gap-mobile)] md:gap-[var(--nav-gap)]  md:text-[var(--header-nav-color)] md:w-full md:ml-[-68px] md:h-[2.825rem] ">
+                        text-white text-lg font-medium gap-[var(--nav-gap-mobile)] md:gap-[var(--nav-gap)]  md:text-[var(--header-nav-color)] md:w-full md:ml-[-68px] md:h-[2.825rem]">
                         <a href="our-services.html" class="hover:underline text-2xl md:text-base m-[0]"> Our
                             Services</a>
                         <a href="who-we-are.html" class="hover:underline text-2xl md:text-base m-[0]">Who We Are</a>
@@ -106,11 +191,11 @@
 
     <!-- Hero -->
     <section
-        class="hero-bg relative bg-cover bg-center bg-no-repeat bg-fixed text-center px-6 py-24 min-h-[480px] md:min-h-[640px] h-screen h-dvh flex flex-col justify-end md:justify-center">
+        class="hero-bg relative bg-center bg-no-repeat bg-fixed text-center px-6 py-24 min-h-[480px] md:min-h-[640px] h-screen h-dvh flex flex-col justify-end md:justify-center">
 
         <div class="max-w-[1120px] w-full my-0 m-auto">
             <div
-                class="max-w-md md:ml-0 mx-auto p-6 rounded-[4px] cta-header text-white text-center py-[40px] md:py-[75px] px-[36px] md:px[47px] transition-all duration-300 ease-in-out bg-[var(--section-top-bg-color)]">
+                class="max-w-md mb-[15px] md:mb-[0] md:ml-0 mx-auto p-6 rounded-[4px] cta-header text-white text-center py-[40px] md:py-[75px] px-[36px] md:px[47px] transition-all duration-300 ease-in-out bg-[var(--section-top-bg-color)]">
                 <h2
                     class=" font-normal mb-2 text-[1.75em] md:text-[2em] leading-[1rem] md:leading-[2.75rem] md:font-normal mb-[0.5rem] md:mb-[1.25rem]">
                     Call to Action
@@ -309,13 +394,15 @@
             <div id="thank-you-message" class="hidden text-center text-green-600 font-semibold text-lg py-8">
                 Thank you! Your request has been submitted successfully.
             </div>
-            <form action="https://formsubmit.co/ian@cortenfreight.com" method="POST" id="quote-form" class="space-y-2 overflow-y-auto max-h-[calc(100vh-280px)]">
+            <form action="https://formsubmit.co/ian@cortenfreight.com" method="POST" id="quote-form"
+                class="space-y-2 overflow-y-auto max-h-[calc(100vh-280px)]">
                 <!-- FormSubmit Config -->
                 <input type="hidden" name="_subject" value="New Quote Request from Corten Freight" />
                 <input type="hidden" name="_next" value="https://bandeanlorand.github.io/corten-freight/" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_autoresponse" value="Thank you for contacting Corten Freight. We’ll get back to you shortly." />
+                <input type="hidden" name="_autoresponse"
+                    value="Thank you for contacting Corten Freight. We’ll get back to you shortly." />
 
                 <!-- First + Last Name -->
                 <div class="flex flex-col md:flex-row md:gap-3">
