@@ -389,7 +389,7 @@ header nav a{
 
 /*  who we are hero bg images and styles starts here */
 .hero-bg.who-we-are {
-  background-image: url('../images/who-we-are-main-hero-mobile-390.jpg');
+  background-image: url('../images/who-we-are-main-hero-desktop-1440-up.jpg');
   background-size: cover;
   background-position: center;
   /* Remove background-attachment: fixed */
@@ -525,3 +525,9 @@ a.active{
     }
   }
 /* page load fallback effect - ends here */
+#mobile-menu{
+  z-index: -1;
+}
+body.overflow-hidden #mobile-menu{
+  z-index: 50;
+}
