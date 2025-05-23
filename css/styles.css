@@ -261,6 +261,7 @@ header nav a{
 @media (min-width: 1441px) {
   .hero-bg {
     background-image: url('../images/home-main-hero-desktop-1440-up.jpg');
+    background-size: cover;
   }
 }
 
