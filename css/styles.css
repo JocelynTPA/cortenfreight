@@ -413,7 +413,7 @@ header nav a{
 
 /*  contact us hero bg images and styles starts here */
 .hero-bg.contact-us {
-  background-image: url('../images/contact-us-main-hero-desktop-1440-up.jpg');
+  background-image: url('../images/contact-us-main-hero-mobile-390.jpg');
   background-size: cover;
   background-position: center;
   /* Remove background-attachment: fixed */
