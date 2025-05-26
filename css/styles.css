@@ -526,12 +526,16 @@ a.active{
 /* page load fallback effect - ends here */
 #mobile-menu{
   z-index: -1;
+  margin-top: -100vh;
 }
 body.overflow-hidden #mobile-menu{
   z-index: 50;
+  display: block;
+  margin-top: unset;
 }
 @media (min-width: 768px) {
 #mobile-menu{
   z-index: 10;
+  margin-top: unset;
 }
 }
