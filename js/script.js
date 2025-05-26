@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         [...parallaxSectionsTop, ...parallaxSections].forEach(section => {
             section.classList.add('disable-parallax');
         });
-        document.body.insertAdjacentHTML('afterbegin', '<div style="position:fixed;top:10px;left:10px;background:red;color:white;padding:4px;z-index:9999;font-size:12px;">iOS fallback active</div>');
+        // document.body.insertAdjacentHTML('afterbegin', '<div style="position:fixed;top:10px;left:10px;background:red;color:white;padding:4px;z-index:9999;font-size:12px;">iOS fallback active</div>');
         return;
     }
 
