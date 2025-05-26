@@ -531,3 +531,8 @@ a.active{
 body.overflow-hidden #mobile-menu{
   z-index: 50;
 }
+@media (min-width: 768px) {
+#mobile-menu{
+  z-index: 10;
+}
+}
