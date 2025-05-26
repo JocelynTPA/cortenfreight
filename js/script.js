@@ -81,20 +81,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* script for paralax effect starts here */
 
+//     const parallaxSectionsTop = document.querySelectorAll('.hero-bg');
+//     const parallaxSections = document.querySelectorAll('.home-middle-image-section, .home-bottom-image-section, .our-services-bottom-image-section');
+
+//     function getSpeed(type) {
+//         const width = window.innerWidth;
+
+//         if (type === 'top') {
+//             if (width < 768) return 0.012;       // mobile header
+//             if (width < 1024) return 0.1;        // tablet header
+//             return 0.15;                         // desktop header
+//         } else {
+//             if (width < 768) return 0.08;         // mobile
+//             if (width < 1024) return 0.5;        // tablet
+//             return 0.7;                          // desktop
+//         }
+//     }
+
+//     window.addEventListener('scroll', () => {
+//         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+//         const speedTop = getSpeed('top');
+//         parallaxSectionsTop.forEach(section => {
+//             const offset = section.offsetTop;
+//             const distance = scrollTop - offset;
+//             section.style.backgroundPosition = `center ${distance * speedTop}px`;
+//         });
+
+//         const speedMiddle = getSpeed('middle');
+//         parallaxSections.forEach(section => {
+//             const offset = section.offsetTop;
+//             const distance = scrollTop - offset;
+//             section.style.backgroundPosition = `center ${distance * speedMiddle}px`;
+//         });
+//     });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
     const parallaxSectionsTop = document.querySelectorAll('.hero-bg');
     const parallaxSections = document.querySelectorAll('.home-middle-image-section, .home-bottom-image-section, .our-services-bottom-image-section');
 
+    // iOS/Safari detection
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                  (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+
+    // If iOS, disable parallax and add fallback class
+    if (isIOS) {
+        [...parallaxSectionsTop, ...parallaxSections].forEach(section => {
+            section.classList.add('disable-parallax');
+        });
+        return; // skip JS parallax scroll logic
+    }
+
     function getSpeed(type) {
         const width = window.innerWidth;
-
         if (type === 'top') {
-            if (width < 768) return 0.012;       // mobile header
-            if (width < 1024) return 0.1;        // tablet header
-            return 0.15;                         // desktop header
+            if (width < 768) return 0.012;
+            if (width < 1024) return 0.1;
+            return 0.15;
         } else {
-            if (width < 768) return 0.08;         // mobile
-            if (width < 1024) return 0.5;        // tablet
-            return 0.7;                          // desktop
+            if (width < 768) return 0.08;
+            if (width < 1024) return 0.5;
+            return 0.7;
         }
     }
 
@@ -116,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 /* script for paralax effect ends here */
 
 /* script for modal box starts here */
