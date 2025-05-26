@@ -539,3 +539,9 @@ body.overflow-hidden #mobile-menu{
   margin-top: unset;
 }
 }
+
+.disable-parallax {
+  background-attachment: scroll !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
