@@ -280,7 +280,6 @@ header nav a{
   .home-middle-image-section {
     background-image: url('../images/home-section-highway-truck-mobile-768.jpg');
     background-size: cover;
-    background-size: auto 145%;
   }
 }
 
@@ -288,14 +287,14 @@ header nav a{
 @media (min-width: 1024px) {
   .home-middle-image-section {
     background-image: url('../images/home-section-highway-truck-desktop-1440-up.jpg');
-    background-size: 150% auto;
+
   }
 }
 @media (min-width: 1441px) {
   .home-middle-image-section {
     background-image: url('../images/home-section-highway-truck-desktop-1440-up.jpg');
     background-size: cover;
-    background-size: 125% auto;
+
   }
   }
 
