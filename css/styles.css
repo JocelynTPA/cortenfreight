@@ -119,15 +119,6 @@ section {
   z-index: 1;
 }
 
-
-
-.request-quote-btn{
-
-}
-
-
-
-
 /* header styles starts here */
 header{
   border-top: 8px;
@@ -140,12 +131,6 @@ header nav a{
   /* color:#29323F; */
 }
 
-.mobile-menu-toggle{
-
-}
-.mobile-menu-toggle.menu-opened{
-  
-}
 .mobile-menu-toggle {
   width: 32px;
   height: 26px;
@@ -153,7 +138,7 @@ header nav a{
   padding: 17px 0 0px 0px;
   line-height: 100%;
   margin: 0;
-  display: block;
+  /* display: block; */
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -544,4 +529,10 @@ body.overflow-hidden #mobile-menu{
   background-attachment: scroll !important;
   background-position: center !important;
   background-size: cover !important;
+}
+.w-12 {
+  width: 3rem;
+}
+.h-12 {
+  height: 3rem;
 }
