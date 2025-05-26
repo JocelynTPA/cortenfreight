@@ -4,7 +4,7 @@
 
 :root {
   /* --header-cta-bg-color: rgba(48,152,231,95); */
-  --header-border-color:#1A5C8E;
+  --header-border-color: #1A5C8E;
   --header-nav-color: #29323F;
   --mobile--bg-color: #3098E7;
   --header-cta-bg-color: #3098E7;
@@ -13,26 +13,26 @@
   --section-bottom-bg-color: #0F6FBE;
   --footer-background-color: #1A5C8E;
   --main-blue-color: #064F88;
-  --nav-gap:52px;
-  --nav-gap-mobile:60px;
+  --nav-gap: 52px;
+  --nav-gap-mobile: 60px;
 
 
   --header-md-py: 0.8380em;
   --header-py: 0.6470em;
   --header-px: 1.25em;
-  --logo-w:10.122em;
+  --logo-w: 10.122em;
 
-  --orange:#EA6C31;
-  --orange-hover:#d85c22;
-  --footer-btn-hover:#0a4775;
-  --circle-blue:#1C78C3;
-  --blue-title-text:#1C78C3;
-  --section-light-blue:#E7F1FB;
-  --section-blue-bg-color:#E8F5FF;
-  --section-border-bottom-color:#D7E6F1;
-  --require-star-red:#C90606;
-  --form-link-text-color:#0067E5;
-  --submit-btn-bg-blue:#008CFF;
+  --orange: #EA6C31;
+  --orange-hover: #d85c22;
+  --footer-btn-hover: #0a4775;
+  --circle-blue: #1C78C3;
+  --blue-title-text: #1C78C3;
+  --section-light-blue: #E7F1FB;
+  --section-blue-bg-color: #E8F5FF;
+  --section-border-bottom-color: #D7E6F1;
+  --require-star-red: #C90606;
+  --form-link-text-color: #0067E5;
+  --submit-btn-bg-blue: #008CFF;
 }
 
 .font-Merriweather-Sans {
@@ -120,14 +120,14 @@ section {
 }
 
 /* header styles starts here */
-header{
+header {
   border-top: 8px;
   background-color: #1A5C8E;
 }
-header nav{
 
-}
-header nav a{
+header nav {}
+
+header nav a {
   /* color:#29323F; */
 }
 
@@ -151,7 +151,7 @@ header nav a{
   right: 20px !important;
 }
 
-.mobile-menu-toggle span{
+.mobile-menu-toggle span {
   display: block;
   position: absolute;
   height: 3px;
@@ -169,14 +169,17 @@ header nav a{
   -o-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
 }
-.mobile-menu-toggle.menu-opened span{
+
+.mobile-menu-toggle.menu-opened span {
   background: #ffffff;
 }
+
 .mobile-menu-toggle span:nth-child(1) {
   top: 2px;
 }
 
-.mobile-menu-toggle span:nth-child(2),.mobile-menu-toggle span:nth-child(3) {
+.mobile-menu-toggle span:nth-child(2),
+.mobile-menu-toggle span:nth-child(3) {
   top: 11px;
 }
 
@@ -216,7 +219,8 @@ header nav a{
   /* opacity: 0.95%; */
   background-color: rgba(48, 152, 231, 0.95);
 }
-#mobile-menu-toggle{
+
+#mobile-menu-toggle {
   right: 10px;
 }
 
@@ -256,7 +260,7 @@ header nav a{
 .home-middle-image-section {
   background-image: url('../images/home-section-highway-truck-mobile-390.jpg');
   background-size: cover;
-  
+
   background-position: center;
   ;
 }
@@ -275,13 +279,14 @@ header nav a{
 
   }
 }
+
 @media (min-width: 1441px) {
   .home-middle-image-section {
     background-image: url('../images/home-section-highway-truck-desktop-1440-up.jpg');
     background-size: cover;
 
   }
-  }
+}
 
 
 /* home middle image section and styles ends here */
@@ -292,18 +297,18 @@ header nav a{
   background-size: cover;
   background-position: center;
   /* Remove background-attachment: fixed */
-  
+
 }
 
 @media (min-width: 391px) {
-  .home-bottom-image-section{
+  .home-bottom-image-section {
     background-image: url('../images/home-section-port-shipp-desktop-1440-up.jpg');
     background-size: 130% auto;
   }
 }
 
 @media (min-width: 1024px) {
-  .home-bottom-image-section{
+  .home-bottom-image-section {
     background-image: url('../images/home-section-port-shipp-desktop-1440-up.jpg');
   }
 }
@@ -348,7 +353,7 @@ header nav a{
 
 
 /* our services middle bg images with port and containers container section and styles starts here */
-.our-services-bottom-image-section{
+.our-services-bottom-image-section {
   background-image: url('../images/our-services-section-port-desktop-1440-up.jpg');
   background-size: cover;
   background-position: center;
@@ -432,30 +437,37 @@ header nav a{
 }
 
 @keyframes pulse-smooth {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
+
   50% {
     transform: translateX(-50%) translateY(8px);
     opacity: 0.7;
   }
 }
 
-button,a{
+button,
+a {
   transition: ease-in-out 0.15s all;
 }
+
 /* scroll to bottom button styles ends here */
-form{
+form {
   /* font-family: "Merriweather Sans", sans-serif; */
 }
-form label{
+
+form label {
   font-family: "Merriweather Sans", sans-serif;
   font-optical-sizing: auto;
   font-size: 0.625rem;
   font-weight: 100;
 }
-form input{
+
+form input {
   font-family: "Merriweather Sans", sans-serif;
   border-color: #D7E6F1;
   border-radius: 0;
@@ -464,65 +476,73 @@ form input{
   font-weight: 200;
 }
 
-form.contact-us label{
+form.contact-us label {
   padding-bottom: 11px;
 }
-form.contact-us label.pb-0{
+
+form.contact-us label.pb-0 {
   padding-bottom: 0;
 }
 
 /* modal appear styling - starts here */
 .modal-visible {
-        opacity: 1 !important;
-        transform: scale(1) !important;
-    }
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
 
-    .modal-hidden {
-        opacity: 0 !important;
-        transform: scale(0.95) !important;
-    }
+.modal-hidden {
+  opacity: 0 !important;
+  transform: scale(0.95) !important;
+}
 
-    .overlay-visible {
-        opacity: 1 !important;
-    }
+.overlay-visible {
+  opacity: 1 !important;
+}
 
-    .overlay-hidden {
-        opacity: 0 !important;
-    }
+.overlay-hidden {
+  opacity: 0 !important;
+}
+
 /* modal appear styling - ends here */
 
-a.active{
+a.active {
   font-weight: bold;
 }
 
 /* page load fallback effect - starts here */
- .animate-pulse {
-    animation: pulse 1.5s ease-in-out infinite;
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
   }
 
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
+  50% {
+    opacity: 0.5;
   }
+}
+
 /* page load fallback effect - ends here */
-#mobile-menu{
+#mobile-menu {
   z-index: -1;
   margin-top: -100vh;
 }
-body.overflow-hidden #mobile-menu{
+
+body.overflow-hidden #mobile-menu {
   z-index: 50;
   display: block;
   margin-top: unset;
 }
+
 @media (min-width: 768px) {
-#mobile-menu{
-  z-index: 10;
-  margin-top: unset;
-}
+  #mobile-menu {
+    z-index: 10;
+    margin-top: unset;
+  }
 }
 
 .disable-parallax {
@@ -530,9 +550,11 @@ body.overflow-hidden #mobile-menu{
   background-position: center !important;
   background-size: cover !important;
 }
+
 .w-12 {
   width: 3rem;
 }
+
 .h-12 {
   height: 3rem;
 }

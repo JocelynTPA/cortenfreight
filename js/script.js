@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Mobile menu toggle
+    // --- MOBILE MENU TOGGLE ---
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('mobile-menu');
     const body = document.body;
@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.add('overflow-hidden');
         menuToggle.classList.add('menu-opened');
         menu.classList.remove('opacity-0', 'max-h-0', 'pointer-events-none');
+
         requestAnimationFrame(() => {
             menu.classList.add('opacity-100', 'py-[17vh]', 'py-[17dvh]');
             setTimeout(() => {
-                const windowHeight = window.innerHeight;
                 menu.classList.add('overflow-y-auto');
             }, 200);
         });
@@ -28,13 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (menuToggle && menu) {
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isOpen = menuToggle.classList.contains('menu-opened');
-            isOpen ? closeMenu() : openMenu();
+            menuToggle.classList.contains('menu-opened') ? closeMenu() : openMenu();
         });
 
         document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
-                if (menuToggle.classList.contains('menu-opened')) closeMenu();
+            if (!menu.contains(e.target) && !menuToggle.contains(e.target) && menuToggle.classList.contains('menu-opened')) {
+                closeMenu();
             }
         });
 
@@ -47,45 +46,42 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Parallax logic
+    // --- PARALLAX EFFECT ---
     const parallaxSectionsTop = document.querySelectorAll('.hero-bg');
     const parallaxSections = document.querySelectorAll('.home-middle-image-section, .home-bottom-image-section, .our-services-bottom-image-section');
 
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-                  (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
 
     if (isIOS) {
         [...parallaxSectionsTop, ...parallaxSections].forEach(section => {
             section.classList.add('disable-parallax');
         });
-        // document.body.insertAdjacentHTML('afterbegin', '<div style="position:fixed;top:10px;left:10px;background:red;color:white;padding:4px;z-index:9999;font-size:12px;">iOS fallback active</div>');
-        return;
+    } else {
+        function getSpeed(type) {
+            const width = window.innerWidth;
+            return type === 'top'
+                ? width < 768 ? 0.012 : width < 1024 ? 0.1 : 0.15
+                : width < 768 ? 0.08 : width < 1024 ? 0.5 : 0.7;
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            const speedTop = getSpeed('top');
+            parallaxSectionsTop.forEach(section => {
+                const offset = section.offsetTop;
+                section.style.backgroundPosition = `center ${ (scrollTop - offset) * speedTop }px`;
+            });
+
+            const speedMiddle = getSpeed('middle');
+            parallaxSections.forEach(section => {
+                const offset = section.offsetTop;
+                section.style.backgroundPosition = `center ${ (scrollTop - offset) * speedMiddle }px`;
+            });
+        });
     }
 
-    function getSpeed(type) {
-        const width = window.innerWidth;
-        return type === 'top'
-            ? width < 768 ? 0.012 : width < 1024 ? 0.1 : 0.15
-            : width < 768 ? 0.08 : width < 1024 ? 0.5 : 0.7;
-    }
-
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        const speedTop = getSpeed('top');
-        parallaxSectionsTop.forEach(section => {
-            const offset = section.offsetTop;
-            section.style.backgroundPosition = `center ${ (scrollTop - offset) * speedTop }px`;
-        });
-
-        const speedMiddle = getSpeed('middle');
-        parallaxSections.forEach(section => {
-            const offset = section.offsetTop;
-            section.style.backgroundPosition = `center ${ (scrollTop - offset) * speedMiddle }px`;
-        });
-    });
-
-    // Modal logic
+    // --- MODAL LOGIC ---
     const modal = document.getElementById('quote-modal');
     const modalBox = document.getElementById('quote-box');
     const form = document.getElementById('quote-form');
@@ -94,14 +90,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.getElementById('close-modal-btn');
 
     openBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            modal.classList.remove('hidden');
-            modal.classList.add('flex', 'overlay-visible');
-            modalBox.classList.remove('modal-hidden');
-            modalBox.classList.add('modal-visible');
-            body.classList.add('body-modal-open');
-        });
+    btn.addEventListener('click', () => {
+        modal.classList.remove('hidden', 'overlay-hidden'); // Remove overlay-hidden
+        modal.classList.add('flex', 'overlay-visible');
+        modalBox.classList.remove('modal-hidden');
+        modalBox.classList.add('modal-visible');
+        body.classList.add('body-modal-open');
     });
+});
+
 
     function closeModal() {
         modalBox.classList.remove('modal-visible');
@@ -124,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form?.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (!form.agree.checked) return alert('You must agree to the terms.');
+
         const formData = new FormData(form);
         try {
             const res = await fetch(form.action, {
@@ -131,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: formData,
                 headers: { 'Accept': 'application/json' }
             });
+
             if (res.ok) {
                 form.classList.add('hidden');
                 thankYouMessage.classList.remove('hidden');
@@ -142,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 5000);
             } else {
                 alert("There was an error submitting the form.");
+                console.error(await res.text());
             }
         } catch (error) {
             alert("An unexpected error occurred.");
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Contact form (outside modal)
+    // --- CONTACT FORM (OUTSIDE MODAL) ---
     const contactForm = document.getElementById('contact-form');
     const thankYouContact = document.getElementById('thank-you-contact');
 
@@ -157,12 +157,14 @@ document.addEventListener("DOMContentLoaded", function () {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(contactForm);
+
             try {
                 const res = await fetch('https://formsubmit.co/ajax/ian@cortenfreight.com', {
                     method: 'POST',
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 });
+
                 if (res.ok) {
                     contactForm.reset();
                     contactForm.classList.add('hidden');
@@ -174,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Page loader
+    // --- PAGE LOADER ---
     document.querySelectorAll('a[href]').forEach(link => {
         const loader = document.getElementById('page-loader');
         link.addEventListener('click', function (e) {
@@ -188,29 +190,36 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Scroll button
+    // --- SCROLL TO SECTION BUTTON ---
     const scrollBtn = document.getElementById('scroll-btn');
     const targetSection = document.getElementById('services');
-    scrollBtn?.addEventListener('click', (e) => {
-        e.preventDefault();
-        const headerOffset = window.innerWidth >= 768 ? 80 : 60;
-        const targetY = targetSection.offsetTop - headerOffset;
-        smoothScrollTo(targetY, 1200);
-    });
+
+    if (scrollBtn && targetSection) {
+        scrollBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const headerOffset = window.innerWidth >= 768 ? 80 : 60;
+            const targetY = targetSection.offsetTop - headerOffset;
+            smoothScrollTo(targetY, 1200);
+        });
+    }
 
     function smoothScrollTo(targetY, duration = 800) {
         const startY = window.pageYOffset;
         const distance = targetY - startY;
         const startTime = performance.now();
+
         function scrollStep(currentTime) {
             const timeElapsed = currentTime - startTime;
             const progress = Math.min(timeElapsed / duration, 1);
             const ease = progress < 0.5
                 ? 4 * progress * progress * progress
                 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
             window.scrollTo(0, startY + distance * ease);
+
             if (progress < 1) requestAnimationFrame(scrollStep);
         }
+
         requestAnimationFrame(scrollStep);
     }
 });
